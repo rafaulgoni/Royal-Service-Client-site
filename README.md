@@ -19,9 +19,6 @@ Description: Loyal Service is a user-friendly service-sharing platform where use
 
 - [Animate.css](https://animate.style/)
 
-- [Swiper slider](https://swiperjs.com)
-
-- [Sweet Alert](https://sweetalert.js.org/guides/)
 
 
 ## Author

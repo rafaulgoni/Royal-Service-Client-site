@@ -11,6 +11,6 @@ export default {
     require('daisyui'),
   ],
   daisyui: {
-    themes: ["light", "synthwave"],
+    themes: ["light", "dark"],
   },
 }
