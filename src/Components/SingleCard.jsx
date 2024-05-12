@@ -1,8 +1,7 @@
-import { Link } from "react-router-dom";
+
 import { FaMapLocationDot } from 'react-icons/fa6';
 
-const SingleCard = ({ data }) => {
-    console.log(data);
+const SingleCard = ({ data, handleBookingConfirm }) => {
     return (
         <div>
             <div className='w-full'>
@@ -27,8 +26,14 @@ const SingleCard = ({ data }) => {
                             <p data-aos="fade-left" data-aos-duration="2000" className='text-[#F9A51A] flex gap-1 items-center'><FaMapLocationDot></FaMapLocationDot>{data.Area}</p>
                         </div>
                         <div className="card-actions flex justify-end">
-                            <Link  data-aos="zoom-in" data-aos-duration="2500" className="btn bg-[#F9A51A] btn-sm">Book Now</Link>
+                           {
+                            data.status === 'confirm' ? <span className="font-bold text-[#F9A51A]">Book Confirm</span> :
+                             <button onClick={() => handleBookingConfirm(data._id)} data-aos="zoom-in" data-aos-duration="2500" className="btn bg-[#F9A51A] btn-sm">Book Now</button>
+                           }
                         </div>
+                        {/* {
+                            data.status === 'confirm' ? <span className="font-bold text-primary">Confirmed</span> :
+                                <button onClick={() => handleBookingConfirm(_id)} className="btn btn-ghost btn-xs">Please Confirm</button>} */}
                     </div>
                 </div>
             </div>
