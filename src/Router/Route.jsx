@@ -12,6 +12,8 @@ import Details from "../Components/Details";
 import ManageService from "../Pages/Services/ManageService";
 import Update from "../Components/Update";
 import SingleService from "../Pages/Services/SingleService";
+import BookService from "../Pages/Services/BookService";
+import ServiceToDo from "../Pages/Services/ServiceToDo";
 
 
 export const router = createBrowserRouter([
@@ -36,11 +38,11 @@ export const router = createBrowserRouter([
       },
       {
         path: '/manageService',
-        element: <ManageService/>,
+        element: <PrivateRoute><ManageService/></PrivateRoute>,
       },
       {
         path: '/update/:id',
-        element: <Update/>,
+        element: <PrivateRoute><Update/></PrivateRoute>,
         loader: ({ params }) => fetch(`http://localhost:5000/card/${params.id}`)
       },
       {
@@ -50,12 +52,21 @@ export const router = createBrowserRouter([
       },
       {
         path: '/addService',
-        element: <AddService></AddService>,
+        element: <PrivateRoute><AddService></AddService></PrivateRoute>,
       },
       {
         path: '/singleService',
-        element: <SingleService/>,
+        element: <PrivateRoute><SingleService/></PrivateRoute>,
         loader: () => fetch('http://localhost:5000/card')
+      },
+      {
+        path:'/bookService',
+        element: <PrivateRoute><BookService/></PrivateRoute>,
+        loader: () => fetch('http://localhost:5000/cards?status=confirm')
+      },
+      {
+        path:'/service',
+        element: <PrivateRoute><ServiceToDo/></PrivateRoute>
       },
       {
         path: "/register",
