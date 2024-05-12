@@ -76,6 +76,12 @@ const Navbar = () => {
                         </div>
                     </div>
                     <ul tabIndex={0} className="mt-3 z-[10] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+                        {
+                            user && <li className="font-bold">Name: {user.displayName}</li>
+                        }
+                        {
+                            user ? <button onClick={handleSignOut} className="btn btn-sm font-bold bg-[#F9A51A]">Log Out</button> : ""
+                        }
 
                     </ul>
                 </div>
