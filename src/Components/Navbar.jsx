@@ -15,19 +15,23 @@ const Navbar = () => {
     const links = <>
         <li><NavLink to='/' className={({ isActive }) => isActive ? ' font-bold border-b-4 p-2 border-[#F9A51A]' : 'font-family'}>Home</NavLink></li>
         <li><NavLink to='/allService' className={({ isActive }) => isActive ? ' font-bold border-b-4 p-2 border-[#F9A51A]' : 'font-family'}>All Services</NavLink></li>
-        <li className="dropdown">
-            <div tabIndex={0} role="button" className="m-1">Dashboard</div>
-            <ul tabIndex={0} className="dropdown-content z-[10] menu p-2 shadow bg-base-200 rounded-box w-40">
-                <li><NavLink to='/addService' className={({ isActive }) => isActive ? ' font-bold border-b-4 p-2 border-[#F9A51A]' : 'font-family'}>Add Service</NavLink></li>
-                <li><NavLink to='/manageService' className={({ isActive }) => isActive ? ' font-bold border-b-4 p-2 border-[#F9A51A]' : 'font-family'}>Manage Service</NavLink></li>
-                <li><NavLink to='/bookService' className={({ isActive }) => isActive ? ' font-bold border-b-4 p-2 border-[#F9A51A]' : 'font-family'}>Booked Services</NavLink></li>
-                <li><NavLink to='/single Service' className={({ isActive }) => isActive ? ' font-bold border-b-4 p-2 border-[#F9A51A]' : 'font-family'}>Single Services</NavLink></li>
-                <li><NavLink to='/service' className={({ isActive }) => isActive ? ' font-bold border-b-4 p-2 border-[#F9A51A]' : 'font-family'}>Service-To-Do</NavLink></li>
-                {
-                    user ? <button onClick={handleSignOut} className="btn btn-sm font-bold bg-[#F9A51A]">Log Out</button> : ""
-                }
-            </ul>
-        </li>
+        {
+            user && <>
+                <li className="dropdown">
+                    <div tabIndex={0} role="button" className="m-1">Dashboard</div>
+                    <ul tabIndex={0} className="dropdown-content z-[10] menu p-2 shadow bg-base-200 rounded-box w-40">
+                        <li><NavLink to='/addService' className={({ isActive }) => isActive ? ' font-bold border-b-4 p-2 border-[#F9A51A]' : 'font-family'}>Add Service</NavLink></li>
+                        <li><NavLink to='/manageService' className={({ isActive }) => isActive ? ' font-bold border-b-4 p-2 border-[#F9A51A]' : 'font-family'}>Manage Service</NavLink></li>
+                        <li><NavLink to='/singleService' className={({ isActive }) => isActive ? ' font-bold border-b-4 p-2 border-[#F9A51A]' : 'font-family'}>Single Services</NavLink></li>
+                        <li><NavLink to='/bookService' className={({ isActive }) => isActive ? ' font-bold border-b-4 p-2 border-[#F9A51A]' : 'font-family'}>Booked Services</NavLink></li>
+                        <li><NavLink to='/service' className={({ isActive }) => isActive ? ' font-bold border-b-4 p-2 border-[#F9A51A]' : 'font-family'}>Service-To-Do</NavLink></li>
+                        {
+                            user ? <button onClick={handleSignOut} className="btn btn-sm font-bold bg-[#F9A51A]">Log Out</button> : ""
+                        }
+                    </ul>
+                </li>
+            </>
+        }
     </>
 
     const handleToggle = e => {

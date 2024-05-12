@@ -11,6 +11,7 @@ import PrivateRoute from '../Router/PrivateRoute';
 import Details from "../Components/Details";
 import ManageService from "../Pages/Services/ManageService";
 import Update from "../Components/Update";
+import SingleService from "../Pages/Services/SingleService";
 
 
 export const router = createBrowserRouter([
@@ -50,6 +51,11 @@ export const router = createBrowserRouter([
       {
         path: '/addService',
         element: <AddService></AddService>,
+      },
+      {
+        path: '/singleService',
+        element: <SingleService/>,
+        loader: () => fetch('http://localhost:5000/card')
       },
       {
         path: "/register",
