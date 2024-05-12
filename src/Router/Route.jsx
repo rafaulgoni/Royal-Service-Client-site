@@ -7,6 +7,7 @@ import Error from '../Pages/Error/Error'
 import AllService from '../Pages/Services/AllService';
 import AddService from '../Pages/Services/AddService';
 import ServiceDetails from "../Components/ServiceDetails";
+import PrivateRoute from '../Router/PrivateRoute';
 
 
 export const router = createBrowserRouter([
@@ -22,7 +23,7 @@ export const router = createBrowserRouter([
       },
       {
         path:'/serviceDetails/:id',
-        element: <ServiceDetails></ServiceDetails>,
+        element: <PrivateRoute><ServiceDetails></ServiceDetails></PrivateRoute>,
         loader: ({ params }) => fetch(`http://localhost:5000/service/${params.id}`)
       },
       {

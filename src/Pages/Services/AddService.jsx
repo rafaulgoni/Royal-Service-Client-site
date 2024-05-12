@@ -1,12 +1,53 @@
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
+// import { useNavigate } from "react-router-dom";
+import toast from 'react-hot-toast';
 
 const AddService = () => {
+    const {user} =useContext(AuthContext)
+    // const navigate = useNavigate()
+
+    const handleAddServices = event => {
+        event.preventDefault();
+        const form = event.target;
+
+        const name = form.name.value;
+        const Area = form.Area.value;
+        const description = form.description.value;
+        const price = form.price.value;
+        const image = form.image.value;
+        const status = 'pending'
+        const providerEmail = user.email;
+        const providerName =user.displayName
+        const providerImage = user.photoURL
+
+        const services = { name, Area, description, price, status, image, providerEmail, providerName, providerImage}
+
+        console.log(services);
+
+        fetch('http://localhost:5000/card',{
+            method: "POST",
+            headers:{
+                'content-type':'application/json'
+            },
+            body:JSON.stringify(services)
+        })
+        .then(res=>res.json())
+        .then(data =>{
+            if(data.insertedId){
+                toast.success('Successfully add service!')
+                //   event.target.reset()
+                //   navigate('/allService')
+            }
+        })
+    }
     return (
         <div className="bg-base-200 p-6 md:p-24 container mx-auto mt-10">
             {/* <Helmet>
                 <title>Artful Abode | Add Craft</title>
             </Helmet> */}
             <h2 className="text-3xl font-extrabold">Add Service</h2>
-            <form>
+            <form onSubmit={handleAddServices}>
                 <div className="md:flex mb-8">
                     <div className="form-control md:w-1/2">
                         <label className="label">
