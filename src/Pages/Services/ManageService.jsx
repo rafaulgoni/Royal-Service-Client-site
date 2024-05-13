@@ -9,7 +9,7 @@ const ManageService = () => {
     const url = `http://localhost:5000/card?providerEmail=${user.email}`
 
     useEffect(() => {
-        fetch(url)
+        fetch(url, {withCredentials : true})
             .then(res => res.json())
             .then(data => {
                 setManage(data)
