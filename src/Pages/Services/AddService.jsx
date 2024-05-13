@@ -23,9 +23,9 @@ const AddService = () => {
 
         const services = { name, Area, description, price, status, image, providerEmail, providerName, providerImage}
 
-        console.log(services);
+        // console.log(services);
 
-        fetch('http://localhost:5000/card',{
+        fetch('https://assignment11-royal-service.vercel.app/card',{
             method: "POST",
             headers:{
                 'content-type':'application/json'

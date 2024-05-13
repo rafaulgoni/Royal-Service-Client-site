@@ -17,12 +17,12 @@ const LogIn = () => {
         e.preventDefault()
         const email = e.target.email.value;
         const password = e.target.password.value;
-        console.log(email, password);
+        // console.log(email, password);
 
         setError('')
         signIn(email, password)
-            .then(result => {
-                console.log(result.user)
+            .then(() => {
+                // console.log(result.user)
                 e.target.reset()
                 navigate(location?.state ? location.state : '/')
                 toast.success('Successfully login user!')
@@ -34,8 +34,8 @@ const LogIn = () => {
     }
     const handleGoogle = () => {
         googleLogIn()
-            .then(result => {
-                console.log(result.user)
+            .then(() => {
+                // console.log(result.user)
                 navigate(location?.state ? location.state : '/')
                 toast.success('Successfully login user!')
             })

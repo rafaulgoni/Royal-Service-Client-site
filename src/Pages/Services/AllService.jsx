@@ -7,7 +7,7 @@ const AllService = () => {
     const [card, setCard] = useState([])
    
     useEffect(() => {
-        fetch(`http://localhost:5000/cardAll?name=${search}`)
+        fetch(`https://assignment11-royal-service.vercel.app/cardAll?name=${search}`)
             .then(res => res.json())
             .then(data => {
                 setCard(data)
@@ -19,7 +19,7 @@ const AllService = () => {
         e.preventDefault();
         const searchText = e.target.search.value;
         setSearch(searchText)
-        console.log(searchText);
+        // console.log(searchText);
     }
     return (
         <div className="container mx-auto mt-10 mb-10">

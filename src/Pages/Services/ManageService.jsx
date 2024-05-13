@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 const ManageService = () => {
     const { user } = useContext(AuthContext)
     const [manage, setManage] = useState([])
-    const url = `http://localhost:5000/card?providerEmail=${user.email}`
+    const url = `https://assignment11-royal-service.vercel.app/card?providerEmail=${user.email}`
 
     useEffect(() => {
         fetch(url, {withCredentials : true})
@@ -28,7 +28,7 @@ const ManageService = () => {
         }).then((result) => {
           if (result.isConfirmed) {
     
-            fetch(`http://localhost:5000/card/${_id}`, {
+            fetch(`https://assignment11-royal-service.vercel.app/card/${_id}`, {
               method: 'DELETE'
             })
               .then(res => res.json())

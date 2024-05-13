@@ -18,7 +18,7 @@ const Update = () => {
         const image = form.image.value;
        const servise = { name, Area, description, price, image }
 
-        fetch(`http://localhost:5000/card/${_id}`, {
+        fetch(`https://assignment11-royal-service.vercel.app/card/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

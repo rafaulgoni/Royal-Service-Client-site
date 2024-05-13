@@ -25,12 +25,12 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch('http://localhost:5000/service')
+        loader: () => fetch('https://assignment11-royal-service.vercel.app/service')
       },
       {
-        path:'/serviceDetails/:id',
+        path: '/serviceDetails/:id',
         element: <PrivateRoute><ServiceDetails></ServiceDetails></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/service/${params.id}`)
+        loader: ({ params }) => fetch(`https://assignment11-royal-service.vercel.app/service/${params.id}`)
       },
       {
         path: '/allService',
@@ -38,17 +38,17 @@ export const router = createBrowserRouter([
       },
       {
         path: '/manageService',
-        element: <PrivateRoute><ManageService/></PrivateRoute>,
+        element: <PrivateRoute><ManageService /></PrivateRoute>,
       },
       {
         path: '/update/:id',
-        element: <PrivateRoute><Update/></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/card/${params.id}`)
+        element: <PrivateRoute><Update /></PrivateRoute>,
+        loader: ({ params }) => fetch(`https://assignment11-royal-service.vercel.app/card/${params.id}`)
       },
       {
-        path:'/details/:id',
+        path: '/details/:id',
         element: <PrivateRoute><Details></Details></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/card/${params.id}`)
+        loader: ({ params }) => fetch(`https://assignment11-royal-service.vercel.app/card/${params.id}`)
       },
       {
         path: '/addService',
@@ -56,17 +56,17 @@ export const router = createBrowserRouter([
       },
       {
         path: '/singleService',
-        element: <PrivateRoute><SingleService/></PrivateRoute>,
-        loader: () => fetch('http://localhost:5000/card')
+        element: <PrivateRoute><SingleService /></PrivateRoute>,
+        loader: () => fetch('https://assignment11-royal-service.vercel.app/card')
       },
       {
-        path:'/bookService',
-        element: <PrivateRoute><BookService/></PrivateRoute>,
-        loader: () => fetch('http://localhost:5000/cards?status=confirm')
+        path: '/bookService',
+        element: <PrivateRoute><BookService /></PrivateRoute>,
+        loader: () => fetch('https://assignment11-royal-service.vercel.app/cards?status=confirm')
       },
       {
-        path:'/service',
-        element: <PrivateRoute><ServiceToDo/></PrivateRoute>
+        path: '/service',
+        element: <PrivateRoute><ServiceToDo /></PrivateRoute>
       },
       {
         path: "/register",

@@ -11,7 +11,7 @@ const SingleService = () => {
     const [bookings, setBookings] = useState([]);
 
     const handleBookingConfirm = id => {
-        fetch(`http://localhost:5000/card/${id}`, {
+        fetch(`https://assignment11-royal-service.vercel.app/card/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'

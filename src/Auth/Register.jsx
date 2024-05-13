@@ -20,7 +20,7 @@ const Register = () => {
         const email = e.target.email.value;
         const password = e.target.password.value;
         const confirmPassword = e.target.confirmPassword.value;
-        console.log(name, photo, email, password, confirmPassword);
+        // console.log(name, photo, email, password, confirmPassword);
 
         if (password.length < 6) {
             setError('password must be 6 characters')
@@ -37,8 +37,8 @@ const Register = () => {
         setError('')
 
         createUser(email, password)
-            .then(result => {
-                console.log(result.user)
+            .then(() => {
+                // console.log(result.user)
                 updateUserProfile(name, photo)
                     .then(() => {
                         e.target.reset()

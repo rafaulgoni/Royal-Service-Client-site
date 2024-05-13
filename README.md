@@ -11,7 +11,7 @@ Description: Loyal Service is a user-friendly service-sharing platform where use
 
 
 ## 🔗 Live Site URL:
- https:
+ https://assignment11-royal-service.web.app
 
 ## Resources:
 

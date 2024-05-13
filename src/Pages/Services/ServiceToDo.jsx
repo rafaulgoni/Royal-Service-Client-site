@@ -5,7 +5,7 @@ import { FaMapLocationDot } from 'react-icons/fa6';
 const ServiceToDo = () => {
     const [serviceData, setServiceData] = useState([])
     const handleButton = (status) => {
-        fetch(`http://localhost:5000/cardToDo?status=${status}`)
+        fetch(`https://assignment11-royal-service.vercel.app/cardToDo?status=${status}`)
             .then(res => res.json())
             .then(data => {
                 if (data.status === "confirm") {
