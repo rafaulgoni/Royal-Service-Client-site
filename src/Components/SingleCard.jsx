@@ -31,9 +31,6 @@ const SingleCard = ({ data, handleBookingConfirm }) => {
                              <button onClick={() => handleBookingConfirm(data._id)} data-aos="zoom-in" data-aos-duration="2500" className="btn bg-[#F9A51A] btn-sm">Book Now</button>
                            }
                         </div>
-                        {/* {
-                            data.status === 'confirm' ? <span className="font-bold text-primary">Confirmed</span> :
-                                <button onClick={() => handleBookingConfirm(_id)} className="btn btn-ghost btn-xs">Please Confirm</button>} */}
                     </div>
                 </div>
             </div>
