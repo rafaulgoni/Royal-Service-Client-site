@@ -6,8 +6,8 @@ const Update = () => {
     const navigate = useNavigate()
 
     const { name, description, price, Area, image, _id } = card
-    
-    const handleUpdateServices =event =>{
+
+    const handleUpdateServices = event => {
         event.preventDefault();
         const form = event.target;
 
@@ -16,7 +16,7 @@ const Update = () => {
         const description = form.description.value;
         const price = form.price.value;
         const image = form.image.value;
-       const servise = { name, Area, description, price, image }
+        const servise = { name, Area, description, price, image }
 
         fetch(`https://assignment11-royal-service.vercel.app/card/${_id}`, {
             method: 'PUT',
@@ -34,7 +34,7 @@ const Update = () => {
                 }
             })
     }
-    
+
     return (
         <div className="bg-base-200 p-6 md:p-24 container mx-auto mt-10">
             {/* <Helmet>
@@ -48,7 +48,19 @@ const Update = () => {
                             <span className="label-text">Service Name</span>
                         </label>
                         <label className="input-group">
-                            <input type="text" name="name" defaultValue={name} placeholder="Service Name" className="input input-bordered w-full" required />
+                            <select
+                                name='name'
+                                id='name'
+                                defaultValue={name}
+                                className='border p-3 rounded-md w-full'
+                            >
+                                <option value='Cleaner'>Cleaner</option>
+                                <option value='Plumber'>Plumber</option>
+                                <option value='Nurse'>Nurse</option>
+                                <option value='Mechanic'>Mechanic</option>
+                                <option value='Electrician'>Electrician</option>
+                                <option value='Landscaper'>Landscaper</option>
+                            </select>
                         </label>
                     </div>
                     <div className="form-control md:w-1/2 md:ml-4">

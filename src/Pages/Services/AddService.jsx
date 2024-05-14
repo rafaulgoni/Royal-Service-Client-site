@@ -5,7 +5,7 @@ import toast from 'react-hot-toast';
 import { Helmet } from 'react-helmet-async';
 
 const AddService = () => {
-    const {user} =useContext(AuthContext)
+    const { user } = useContext(AuthContext)
     const navigate = useNavigate()
 
     const handleAddServices = event => {
@@ -19,32 +19,32 @@ const AddService = () => {
         const image = form.image.value;
         const status = 'pending'
         const providerEmail = user.email;
-        const providerName =user.displayName
+        const providerName = user.displayName
         const providerImage = user.photoURL
 
-        const services = { name, Area, description, price, status, image, providerEmail, providerName, providerImage}
+        const services = { name, Area, description, price, status, image, providerEmail, providerName, providerImage }
 
         // console.log(services);
 
-        fetch('https://assignment11-royal-service.vercel.app/card',{
+        fetch('https://assignment11-royal-service.vercel.app/card', {
             method: "POST",
-            headers:{
-                'content-type':'application/json'
+            headers: {
+                'content-type': 'application/json'
             },
-            body:JSON.stringify(services)
+            body: JSON.stringify(services)
         })
-        .then(res=>res.json())
-        .then(data =>{
-            if(data.insertedId){
-                toast.success('Successfully add service!')
-                  event.target.reset()
-                  navigate('/manageService')
-            }
-        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    toast.success('Successfully add service!')
+                    event.target.reset()
+                    navigate('/manageService')
+                }
+            })
     }
     return (
         <div className="bg-base-200 p-6 md:p-24 container mx-auto mt-10">
-           <Helmet>
+            <Helmet>
                 <title>Royal Service | Add Service</title>
             </Helmet>
             <h2 className="text-3xl font-extrabold">Add Service</h2>
@@ -55,7 +55,18 @@ const AddService = () => {
                             <span className="label-text">Service Name</span>
                         </label>
                         <label className="input-group">
-                            <input type="text" name="name" placeholder="Service Name" className="input input-bordered w-full" required />
+                            <select
+                                name='name'
+                                id='name'
+                                className='border p-3 rounded-md w-full'
+                            >
+                                <option value='Cleaner'>Cleaner</option>
+                                <option value='Plumber'>Plumber</option>
+                                <option value='Nurse'>Nurse</option>
+                                <option value='Mechanic'>Mechanic</option>
+                                <option value='Electrician'>Electrician</option>
+                                <option value='Landscaper'>Landscaper</option>
+                            </select>
                         </label>
                     </div>
                     <div className="form-control md:w-1/2 md:ml-4">
