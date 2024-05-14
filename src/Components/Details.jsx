@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { FaArrowRight, FaMapLocationDot } from "react-icons/fa6";
 import { Link, useLoaderData } from "react-router-dom";
 
@@ -7,6 +8,9 @@ const Details = () => {
     return (
         <div>
             <div className="container mx-auto mt-20 mb-20">
+            <Helmet>
+                <title>Royal Service | Service Details</title>
+            </Helmet>
                 <div className='w-full'>
                     <div className="card lg:card-side bg-base-100 shadow-xl">
                         <figure><img data-aos="zoom-in" data-aos-duration="1500" className='w-96 h-96' src={data.image} alt="Album" /></figure>

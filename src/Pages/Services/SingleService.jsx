@@ -4,6 +4,7 @@ import { useLoaderData, useNavigate } from 'react-router-dom';
 import SingleCard from '../../Components/SingleCard';
 import { useState } from 'react';
 import toast from 'react-hot-toast';
+import { Helmet } from 'react-helmet-async';
 
 const SingleService = () => {
     const navigate =useNavigate()
@@ -35,6 +36,9 @@ const SingleService = () => {
     }
     return (
         <div className='container mx-auto mt-10 mb-10 space-y-7'>
+            <Helmet>
+                <title>Royal Service | Single Service</title>
+            </Helmet>
             <div className='space-y-7'>
                 <Tabs>
                     <TabList>

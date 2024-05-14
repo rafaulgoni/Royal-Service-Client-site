@@ -11,7 +11,7 @@ const Feature = () => {
                          <img src={'https://i.ibb.co/k4spkMj/services-400.jpg'} className="absolute w-1/2 right-5 top-1/2 border-8 border-white rounded-lg shadow-2xl" />
                     </div>
                    
-                    <div className='lg:w-1/2'>
+                    <div className='lg:w-1/2 md:mt-20'>
                         <p className='text-xl font-bold text-[#F9A51A]'>About Us</p>
                         <h1 className="text-5xl font-bold">WAffordable Price For All Servicing</h1>
                         <p className="py-6">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or random words which do not look even slightly believable. </p>

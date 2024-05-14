@@ -1,11 +1,15 @@
 
 import { useLoaderData } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 
 const BookService = () => {
     const data = useLoaderData()
     return (
         <div className="container mx-auto mt-10 mb-10">
+            <Helmet>
+                <title>Royal Service | Booked Service</title>
+            </Helmet>
             <div className="overflow-x-auto">
                 <table className="table">
                     {/* head */}

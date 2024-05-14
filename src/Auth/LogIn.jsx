@@ -4,7 +4,7 @@ import toast from 'react-hot-toast';
 // import 'animate.css';
 import { useContext, useState } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
-// import { Helmet } from "react-helmet-async";
+import { Helmet } from "react-helmet-async";
 
 const LogIn = () => {
     const { signIn, googleLogIn } = useContext(AuthContext)
@@ -46,9 +46,9 @@ const LogIn = () => {
 
     return (
         <div>
-            {/* <Helmet>
-                <title>Luxe Havens | LogIn</title>
-            </Helmet> */}
+            <Helmet>
+                <title>Royal Service | LogIn</title>
+            </Helmet>
             <div className="hero">
                 <div className="hero-content flex-col lg:flex-row">
                     <div className="text-center lg:text-left">

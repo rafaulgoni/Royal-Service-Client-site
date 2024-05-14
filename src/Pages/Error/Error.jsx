@@ -1,8 +1,12 @@
 
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 const Error = () => {
     return (
         <div>
+            <Helmet>
+                <title>Royal Service | Error</title>
+            </Helmet>
             <section className="flex items-center h-full p-16 dark:bg-gray-50 dark:text-gray-800">
                 <div className="container flex flex-col items-center justify-center px-5 mx-auto my-8">
                     <div className="max-w-md text-center">

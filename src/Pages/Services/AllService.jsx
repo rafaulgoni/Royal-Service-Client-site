@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import CardService from './CardService';
+import { Helmet } from "react-helmet-async";
 
 
 const AllService = () => {
@@ -23,6 +24,9 @@ const AllService = () => {
     }
     return (
         <div className="container mx-auto mt-10 mb-10">
+            <Helmet>
+                <title>Royal Service | All Service </title>
+            </Helmet>
             <form onSubmit={handleSearch} className="mb-5">
                 <label className="input input-bordered flex items-center gap-2 max-w-sm">
                     <input type="text" name="search" className="grow " placeholder="Search" />

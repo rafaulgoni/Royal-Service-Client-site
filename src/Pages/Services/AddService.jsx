@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { useNavigate } from "react-router-dom";
 import toast from 'react-hot-toast';
+import { Helmet } from 'react-helmet-async';
 
 const AddService = () => {
     const {user} =useContext(AuthContext)
@@ -43,9 +44,9 @@ const AddService = () => {
     }
     return (
         <div className="bg-base-200 p-6 md:p-24 container mx-auto mt-10">
-            {/* <Helmet>
-                <title>Artful Abode | Add Craft</title>
-            </Helmet> */}
+           <Helmet>
+                <title>Royal Service | Add Service</title>
+            </Helmet>
             <h2 className="text-3xl font-extrabold">Add Service</h2>
             <form onSubmit={handleAddServices}>
                 <div className="md:flex mb-8">

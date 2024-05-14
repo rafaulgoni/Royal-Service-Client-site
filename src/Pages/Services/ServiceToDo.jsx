@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FaChevronDown } from "react-icons/fa";
 import { FaMapLocationDot } from 'react-icons/fa6';
+import { Helmet } from 'react-helmet-async';
 
 const ServiceToDo = () => {
     const [serviceData, setServiceData] = useState([])
@@ -19,6 +20,9 @@ const ServiceToDo = () => {
     }
     return (
         <div className="container mx-auto mt-10 mb-10">
+            <Helmet>
+                <title>Royal Service | Service To Do</title>
+            </Helmet>
             <div className="flex justify-end">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn m-1 bg-[#F9A51A]">filter by <FaChevronDown /></div>

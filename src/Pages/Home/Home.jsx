@@ -5,6 +5,7 @@ import Banner from "../../Components/Banner";
 import Feature from "../../Components/Feature";
 import Team from "../../Components/Team";
 import ServiceCard from "../../Components/ServiceCard";
+import { Helmet } from 'react-helmet-async';
 
 
 
@@ -12,6 +13,9 @@ const Home = () => {
     const service = useLoaderData()
     return (
         <div>
+            <Helmet>
+                <title>Royal Service | Home</title>
+            </Helmet>
             <div className="mt-10 mb-10">
                 <Banner></Banner>
             </div>
