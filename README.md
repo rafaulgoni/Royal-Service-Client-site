@@ -26,12 +26,12 @@ Join Loyal Service today and experience the convenience of connecting with skill
 
 ## Installation
 
-Install my-project with npm
+## Installation
+
+Install my-project with clone
 
 ```bash
-  npm install b9a11-client-side-rafaulgoni
-  cd b9a11-client-side-rafaulgoni
-
-  npm install b9a11-server-side-rafaulgoni
-  cd b9a11-server-side-rafaulgoni
+  git clone 
+  npm Install
+  npm run dev
 ```
