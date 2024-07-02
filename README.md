@@ -11,6 +11,9 @@ Join Loyal Service today and experience the convenience of connecting with skill
 ## 🔗 Live Site URL:
  https://assignment11-royal-service.web.app
 
+ ## Problem face
+ I faced problem while projecting royal service and implementing a jwt. However, after getting a very nice idea with the help of Google Chat GPT, I have been able to solve my problems.
+
 ## Resources:
 
 - [AOS Package](https://www.npmjs.com/package/aos)
